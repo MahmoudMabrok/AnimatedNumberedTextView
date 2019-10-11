@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="view_stroke">#545657</color>
-    <color name="view_solid">#D4E157</color>
-    <color name="tvColor">#F4F5F2</color>
+    <color name="view_solid">#FFFFFF</color>
+    <color name="tvColor">#545657</color>
 
 </resources>

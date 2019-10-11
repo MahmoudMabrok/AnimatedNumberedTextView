@@ -3,6 +3,7 @@ package views.mahmoudmabrok.animatedtextview;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.Gravity;
 
 import java.util.Locale;
 
@@ -18,6 +19,8 @@ public class AnimatedNumberedTextView extends AppCompatTextView implements Value
         super(context, attrs);
         setTextColor(context.getResources().getColor(R.color.tvColor));
         setBackgroundResource(R.drawable.view_bg);
+        setGravity(Gravity.CENTER);
+        setTextSize(22);
     }
 
     public void setMessage(String message) {
@@ -25,10 +28,11 @@ public class AnimatedNumberedTextView extends AppCompatTextView implements Value
     }
 
     public void animateTo(int value, int duration) {
+        int start = currentValue;
         animator = new ValueAnimator();
         animator.setTarget(this);
         animator.setDuration(duration);
-        animator.setIntValues(currentValue, value);
+        animator.setIntValues(start, value);
         animator.addUpdateListener(this);
         animator.start();
         currentValue = value;
@@ -39,12 +43,15 @@ public class AnimatedNumberedTextView extends AppCompatTextView implements Value
             animator.cancel();
             animator = null;
         }
+        int start = currentValue;
         animator = new ValueAnimator();
         animator.setTarget(this);
         animator.setDuration(duration);
-        animator.setIntValues(currentValue, currentValue + amount);
+        animator.setIntValues(start, start + amount);
         animator.addUpdateListener(this);
         animator.start();
+
+        currentValue += amount;
     }
 
     @Override
