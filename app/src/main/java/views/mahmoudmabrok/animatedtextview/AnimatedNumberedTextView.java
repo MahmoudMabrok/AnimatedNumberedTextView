@@ -59,7 +59,7 @@ public class AnimatedNumberedTextView extends AppCompatTextView implements Value
     @Override
     public void onAnimationUpdate(ValueAnimator animation) {
         int value = (int) animation.getAnimatedValue();
-        setText(String.format("%s %d", message, value, Locale.getDefault()));
+        setText(String.format( Locale.getDefault(),"%s %d", message, value));
     }
 
 }
