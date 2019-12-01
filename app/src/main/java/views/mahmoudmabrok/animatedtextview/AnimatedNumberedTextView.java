@@ -4,8 +4,6 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.Gravity;
-
-import java.time.format.TextStyle;
 import java.util.Locale;
 
 import androidx.appcompat.widget.AppCompatTextView;
