@@ -29,13 +29,8 @@ public class AnimatedNumberedTextView extends AppCompatTextView implements Value
 
     public void animateTo(int value, int duration) {
         int start = currentValue;
-        animator = new ValueAnimator();
-        animator.setTarget(this);
-        animator.setDuration(duration);
-        animator.setIntValues(start, value);
-        animator.addUpdateListener(this);
-        animator.start();
-        currentValue = value;
+        currentValue = value;        
+        setup(start, value,duration);
     }
 
     public void updateValue(int amount, int duration) {
@@ -44,20 +39,22 @@ public class AnimatedNumberedTextView extends AppCompatTextView implements Value
             animator = null;
         }
         int start = currentValue;
+        int end = start + amount ; 
+        setup(start , end, duration);
+        currentValue += amount;
+    }
+    private void setup(int start , int end, int duration){
         animator = new ValueAnimator();
         animator.setTarget(this);
         animator.setDuration(duration);
-        animator.setIntValues(start, start + amount);
         animator.addUpdateListener(this);
+        animator.setIntValues(start, end);
         animator.start();
-
-        currentValue += amount;
     }
 
     @Override
     public void onAnimationUpdate(ValueAnimator animation) {
         int value = (int) animation.getAnimatedValue();
-        setText(String.format("%s %d", message, value, Locale.getDefault()));
+        setText(String.format(Locale.getDefault(),"%s %d", message, value ));
     }
-
 }
