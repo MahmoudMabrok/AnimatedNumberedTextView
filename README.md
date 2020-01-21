@@ -1,7 +1,7 @@
 
 
 # AnimatedNumberedTextView
-[![](https://jitpack.io/v/MahmoudMabrok/AnimatedNumberedTextView.svg)](https://jitpack.io/#MahmoudMabrok/AnimatedNumberedTextView)
+[![](https://jitpack.io/v/MahmoudMabrok/AnimatedNumberedTextView.svg)](https://jitpack.io/#MahmoudMabrok/AnimatedNumberedTextView) [![HitCount](http://hits.dwyl.io/MahmoudMabrok/AnimatedNumberedTextView.svg)](http://hits.dwyl.io/MahmoudMabrok/AnimatedNumberedTextView)
 
 animated textview that animate value.
 
